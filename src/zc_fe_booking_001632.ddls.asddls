@@ -3,8 +3,8 @@
 @EndUserText.label: 'Projection View forBooking'
 @ObjectModel.semanticKey: [ 'BookingID' ]
 @Search.searchable: true
-define view entity ZC_FE_BOOKING_001632
-  as projection on ZI_FE_Booking_001632
+define view entity ZC_FE_BOOKING_001632  //test commit
+  as projection on ZI_FE_BOOKING_001632
 {
   key BookingUUID,
   TravelUUID,
@@ -59,7 +59,7 @@ define view entity ZC_FE_BOOKING_001632
   CreatedBy,
   LastChangedBy,
   LocalLastChangedAt,
-  _Travel : redirected to parent ZC_FE_Travel_001632,
+  _Travel : redirected to parent ZC_FE_TRAVEL_001632,
   _Connection,
   _Flight,
   _Carrier,
