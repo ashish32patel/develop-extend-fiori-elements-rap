@@ -2,7 +2,13 @@
 @UI: {
     headerInfo: {
         typeName: 'Travel',
-        typeNamePlural: 'Travels'
+        typeNamePlural: 'Travels',
+        title: {
+            type: #STANDARD, value: 'Description'  --title in object page
+        },
+        description: {
+            value: 'TravelID'    --subtitle in object page
+        }
     },
     presentationVariant: [{
         sortOrder: [{
@@ -17,30 +23,106 @@
 
 annotate view ZC_FE_TRAVEL_001632 with
 {
+
+  @UI.facet: [
+  /*Header Facets*/
+    {
+        id: 'TravelHeaderPrice',
+        purpose: #HEADER,           --represents header facet
+        type: #DATAPOINT_REFERENCE,
+        position: 10,
+        targetQualifier: 'PriceData'
+    },
+    {
+        id: 'TravelHeaderOverallStatus',
+        purpose: #HEADER,          --represents header facet
+        type: #DATAPOINT_REFERENCE,
+        position: 20,
+        targetQualifier: 'StatusData'
+     },
+   /*Standard Facets*/
+   //section : General Information
+    {
+      label: 'General Information',
+      id: 'GeneralInfo',
+      type: #COLLECTION, -- represents a collection facet, containing other facets.
+      position: 10
+    },
+        {
+          label: 'General',
+          id: 'Travel',
+          type: #IDENTIFICATION_REFERENCE,
+          purpose: #STANDARD,
+          parentId: 'GeneralInfo',  -- points to "General Information" collection facet
+          position: 10
+        },
+        {
+          id: 'Dates',
+          purpose: #STANDARD,
+          type: #FIELDGROUP_REFERENCE, -- The facet type for a field group is #FIELDGROUP_REFERENCE
+          parentId: 'GeneralInfo', -- points to "General Information" collection facet
+          label: 'Dates',
+          position: 30,
+          targetQualifier: 'DatesGroup'
+        },
+        {
+          id: 'Prices',
+          purpose: #STANDARD,
+          type: #FIELDGROUP_REFERENCE,
+          parentId: 'GeneralInfo',  -- points to "General Information" collection facet
+          label: 'Prices',
+          position: 20,
+          targetQualifier: 'PricesGroup'
+        },
+    //section : Booking
+    {
+      id: 'Booking',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE, --new section with table
+      label: 'Bookings',
+      position: 20,
+      targetElement: '_Booking'
+    }
+
+
+  ]
+
+
   @UI.lineItem: [{ position: 10 }]
   TravelID;
 
+  @UI.identification: [{ position: 10 }]
+  Description;
+
   @UI.lineItem: [{ position: 20 }]
   @UI.selectionField: [{ position: 10 }]
+  @UI.identification: [{ position: 30 }]
   AgencyID;
 
   @UI.lineItem: [{ position: 30 }]
   @UI.selectionField: [{ position: 20 }]
+  @UI.identification: [{ position: 20 }]
   CustomerID;
 
   @UI.lineItem: [{ position: 40 }]
+  @UI.fieldGroup: [{ qualifier: 'DatesGroup', position: 10 }]
   BeginDate;
 
   @UI.lineItem: [{ position: 50 }]
+  @UI.fieldGroup: [{ qualifier: 'DatesGroup', position: 20 }]
   EndDate;
 
   @UI.lineItem: [{ position: 60 }]
+  @UI.fieldGroup: [ { qualifier: 'PricesGroup', position: 10} ]
   BookingFee;
 
   @UI.lineItem: [{ position: 70 }]
+  @UI.dataPoint: { qualifier: 'PriceData', title: 'Total Price'}
+  @UI.fieldGroup: [ { qualifier: 'PricesGroup', position: 20} ]
   TotalPrice;
 
   @UI.lineItem: [{ position: 80, criticality: 'OverallStatusCriticality' }]
+  @UI.dataPoint: { qualifier: 'StatusData', title: 'Status', criticality: 'OverallStatusCriticality' }
   @UI.selectionField: [{ position: 30 }]
   @UI.textArrangement: #TEXT_ONLY
   OverallStatus;
