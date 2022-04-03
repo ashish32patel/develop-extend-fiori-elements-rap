@@ -15,6 +15,5 @@ Airline pictures in Bookings table:
   //make sure the field AirlinePicURL is given:  @Semantics.imageUrl: true
   
   @UI.lineItem: [ { position: 05, label: ' ', value: '_Carrier.AirlinePicURL' } ]
-  
   _Carrier;
 
