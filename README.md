@@ -2,7 +2,6 @@
 RAP based OData Service for developing and extending Fiori Elements app
 
 [OpenSAP github](https://github.com/SAP-samples/fiori-elements-opensap)
-
 [SAP Fiori Elements Feature Map](https://sapui5.hana.ondemand.com/sdk/#/topic/62d3f7c2a9424864921184fd6c7002eb.html)
 
 ## Helper artifacts
