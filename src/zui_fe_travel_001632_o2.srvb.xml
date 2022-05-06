@@ -4,9 +4,9 @@
   <asx:values>
    <SRVB>
     <METADATA>
-     <NAME>ZUI_FE_BOOKING_001632_O2</NAME>
+     <NAME>ZUI_FE_TRAVEL_001632_O2</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Service binding for booking analysis</DESCRIPTION>
+     <DESCRIPTION>trave service binding oData V2</DESCRIPTION>
      <LANGUAGE>EN</LANGUAGE>
      <LINKS>
       <item>
@@ -15,7 +15,7 @@
        <TITLE>Historic versions</TITLE>
       </item>
       <item>
-       <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_FE_BOOKING_001632_O2</HREF>
+       <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_FE_TRAVEL_001632_O2</HREF>
        <REL>http://www.sap.com/categories/odatav2</REL>
        <TYPE>application/vnd.sap.adt.businessservices.odatav2.v2+xml</TYPE>
        <TITLE>ODATAV2</TITLE>
@@ -43,21 +43,21 @@
     </METADATA>
     <CONTENT>
      <BIND_TYPE_IMPL>
-      <NAME>ZUI_FE_BOOKING_001632_O2</NAME>
+      <NAME>ZUI_FE_TRAVEL_001632_O2</NAME>
      </BIND_TYPE_IMPL>
      <BIND_TYPE>ODATA</BIND_TYPE>
      <BIND_TYPE_VERSION>V2</BIND_TYPE_VERSION>
      <SERVICES>
       <item>
-       <SERVICE_NAME>ZUI_FE_BOOKING_001632_O2</SERVICE_NAME>
+       <SERVICE_NAME>ZUI_FE_TRAVEL_001632_O2</SERVICE_NAME>
        <SERVICE_CONTENT>
         <item>
          <SERVICE_VERSION>0001</SERVICE_VERSION>
          <RELEASE_STATE>NOT_RELEASED</RELEASE_STATE>
          <SRVD_REF>
-          <URI>/sap/bc/adt/ddic/srvd/sources/zfe_booking_analytics_001632</URI>
+          <URI>/sap/bc/adt/ddic/srvd/sources/zfe_travel_001632</URI>
           <TYPE>SRVD/SRV</TYPE>
-          <NAME>ZFE_BOOKING_ANALYTICS_001632</NAME>
+          <NAME>ZFE_TRAVEL_001632</NAME>
          </SRVD_REF>
         </item>
        </SERVICE_CONTENT>

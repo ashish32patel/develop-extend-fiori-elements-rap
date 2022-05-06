@@ -43,5 +43,6 @@ define root view entity ZI_FE_TRAVEL_001632
       _Currency,
       _Customer,
       _TravelStatus
+      
 
 }
